@@ -17,6 +17,12 @@
     "default": false,
     "hint": "启用后，只有白名单中的群聊会被响应。可直接输入QQ群号，系统会自动匹配"
   },
+  "custom_feedback_message": {
+    "description": "自定义拒绝回复消息",
+    "type": "string",
+    "default": "无权限用户",
+    "hint": "当临时会话或不在白名单的私聊被阻止时，机器人回复的内容"
+  },
   "friend_message_whitelist": {
     "description": "好友私聊白名单",
     "type": "list",
@@ -60,3 +66,4 @@
     "hint": "启用后，当消息被阻止时会输出日志"
   }
 }
+
