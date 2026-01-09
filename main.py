@@ -346,8 +346,10 @@ class AdvancedWhitelistPlugin(Star):
             # 标记已发送反馈
             self._mark_feedback_sent(event)
             # 设置消息结果并停止事件
+            # 修改点：从配置获取自定义消息
+            feedback_msg = self.config.get("custom_feedback_message", "无权限用户")
             event.set_result(
-                MessageEventResult().message("要经过姐姐同意哦").stop_event()
+                MessageEventResult().message(feedback_msg).stop_event()
             )
         else:
             # 后续消息或历史消息：静默阻止
@@ -406,8 +408,9 @@ class AdvancedWhitelistPlugin(Star):
             # 标记已发送反馈
             self._mark_feedback_sent(event)
             # 设置消息结果并停止事件
+            feedback_msg = self.config.get("custom_feedback_message", "无权限用户")
             event.set_result(
-                MessageEventResult().message("要先经过姐姐同意哦").stop_event()
+                MessageEventResult().message(feedback_msg).stop_event()
             )
         else:
             # 后续消息或历史消息：静默阻止
