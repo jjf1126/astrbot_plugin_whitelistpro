@@ -347,7 +347,7 @@ class AdvancedWhitelistPlugin(Star):
             self._mark_feedback_sent(event)
             # 设置消息结果并停止事件
             event.set_result(
-                MessageEventResult().message("珈宝也想和你玩，但是要经过姐姐同意哦").stop_event()
+                MessageEventResult().message("要经过姐姐同意哦").stop_event()
             )
         else:
             # 后续消息或历史消息：静默阻止
